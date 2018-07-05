@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<!-- saved from url=(0088)https://www.pythonanywhere.com/user/maitam/files/home/maitam/mysite/templates/index.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <style>
+        *
+        {
+           padding: 0;
+           margin: 0;
+        }
+        h1
+        {
+            color: #ffffff;
+            background-color: blue;
+        }
+        .struct
+        {
+            padding: 7px;
+            color: #ffffff;
+            background-color: gray;
+        }
+        textarea
+        {
+            width: 400px;
+            height: 200px;
+        }
+        .block
+        {
+            margin-left: 70px;
+            padding: 10px;
+        }
+    </style>
+<title>Добро пожаловать на Майтам!</title></head>
+
+
+<body>{% if name %}
+  <h1> Добро пожаловать на Майтам! {{ name }}</h1>
+  <div class="block">
+  <p><a href="https://twitter.com/%7B%7B%20name%20%7D%7D">{{ name }} @twitter</a></p>
+  <p><a href="https://vk.com/%7B%7Bname%7D%7D">{{name}} @vk</a></p>
+  <p>Информация: об {{ name }}</p>
+  </div>
+{% else %}
+  <h1>Добро пожаловать на Майтам!</h1>
+{% endif %}
+
+<div class="block">
+<p>
+    Майтам - слово с башкирского и татарского языка переводится как "Говорить".
+</p>
+
+<ul>
+    <li>
+        <a href="http://maitaim.pythonanywhere.com/about">О Майтам</a>
+    </li>
+    <li><a href="https://twitter.com/amirismagilov">@amirismagilov</a></li>
+    <ul>
+        <li><a href="https://www.pythonanywhere.com/user/maitam/files/home/maitam/mysite/templates/index.html#">Новый стручок</a></li>
+    </ul>
+</ul>
+</div><br>
+<p>Пользователь: {{ user }}</p><br>
+<p>
+    <label>Введите название стручка:</label><br>
+    <input name="newstruct" type="text">
+    <input name="submit" type="submit" value="Создать">
+    <br>
+</p><br>
+
+<div class="struct">
+    {% if structs %}
+    <p>Новость: "{{ structs[0][3] }}"</p>
+    <p>Стручок: {{ structs[0][1] }}</p>
+    <p>Текстовое сообщение:<br>{{ structs[0][2] }}</p>
+    <p>Случайная новость: {{ randomnews }}</p>
+    {% endif %}
+</div>
+<br>
+
+<div>
+    <p><b>Серверное Время:{{ datetime }}</b></p>
+</div>
+<div>
+    <label>Добавить Новость:</label><br>
+    <textarea size="1000">@amirismagilov Временно не работает!</textarea><br>
+    <input name="submitnews" type="submit" value="Создать"><br>
+</div>
+<div>
+    <b>@author: Ismagilov A.Z. @amirismagilov 2018(c)</b>
+</div></body></html>
